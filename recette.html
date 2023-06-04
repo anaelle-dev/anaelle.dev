@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Recette secrète de tarte au chocolat</title>
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: black;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.glitch-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+  font-size: 50px;
+  color: white;
+  text-transform: uppercase;
+  animation: glitch-anim 3s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #49FC00;
+  background: black;
+  animation: glitch-anim-2 5s infinite;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 red;
+  background: black;
+  animation: glitch-anim-3 7s infinite;
+}
+
+@keyframes glitch-anim {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+  }
+  40% {
+    transform: translate(5px, -5px);
+  }
+  60% {
+    transform: translate(-5px, 5px);
+  }
+  80% {
+    transform: translate(5px, -5px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0%,
+  100% {
+    clip: rect(84px, 9999px, 110px, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    clip: rect(54px, 9999px, 120px, 0);
+  }
+  30%,
+  50%,
+  70% {
+    clip: rect(94px, 9999px, 150px, 0);
+  }
+}
+
+@keyframes glitch-anim-3 {
+  0%,
+  100% {
+    clip: rect(64px, 9999px, 94px, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    clip: rect(64px, 9999px, 94px, 0);
+  }
+  30%,
+  50%,
+  70% {
+    clip: rect(64px, 9999px, 94px, 0);
+  }
+}
+</style>
+</head>
+<body>
+<h1 align="left" id="glitch-distort">Recette secrète de tarte au chocolat</h1>
+<p>Ingrédients:</p>
+<ul>
+<li>1 pâte brisée (épaisse)</li>
+<li>300 g de chocolat noir (de préférence Nestlé)</li>
+<li>300 mL de crème fraîche (entière, semi-épaisse)</li>
+<li>1 œufs (ou 2, en fonction de l'épaisseur de la crème)</li>
+<li>150 g de sucre en poudre</li>
+<li>7,5 g de sucre vanillé</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Préchauffez le four à 180°C.</li>
+<li>Étalez la pâte brisée dans un moule à tarte et faites-la cuire seule pendant 15 minutes à 180°C.</li>
+<li>Dans une casserole à feu doux, faites fondre le chocolat noir avec la crème fraîche, en remuant constamment, jusqu'à ce que le mélange soit lisse et homogène.</li>
+<li>Retirez la casserole du feu et ajoutez les œufs, le sucre en poudre et le sucre vanillé. Mélangez bien jusqu'à ce que le sucre soit dissous.</li>
+<li>Versez la préparation au chocolat sur la pâte brisée cuite et remettez au four pendant environ 17 minutes à 180°C.</li>
+<li>Laissez refroidir la tarte au chocolat à température ambiante, puis placez-la au réfrigérateur durant plusieurs heures avant de servir.</li>
+</ol>
+</body>
+</html>
