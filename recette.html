@@ -1,138 +1,221 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+
 <head>
-<title>Recette secrète de tarte au chocolat</title>
-<style>
-  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recette secrète de tarte au chocolat d'Anaëlle</title>
+  <style>
+    /* Styles CSS généraux */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f8f8;
+    }
 
-html,
-body {
-  height: 100%;
-}
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding-bottom: 0.5rem;
+      padding-top: 0.5 rem; /* Add padding between top of frame and top of window */
+    }
 
-body {
-  background: black;
-  font-family: 'Montserrat', sans-serif;
-}
+    /* Styles pour le titre de la recette */
+    .recipe-title {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #00ffff;
+      text-align: center;
+      font-family: Poppins, sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      position: relative;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
 
-.glitch-wrapper {
-  height: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px;
-}
+    /* Styles pour l'effet glitch */
+    .glitch-wrapper {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
 
-.glitch {
-  position: relative;
-  display: inline-block;
-  font-size: 50px;
-  color: white;
-  text-transform: uppercase;
-  animation: glitch-anim 3s infinite;
-}
+    .glitch {
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 4px;
+      position: relative;
+      z-index: 1;
+    }
 
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+    .glitch:before,
+    .glitch:after {
+      display: block;
+      content: attr(data-glitch);
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
 
-.glitch::before {
-  left: 2px;
-  text-shadow: -2px 0 #49FC00;
-  background: black;
-  animation: glitch-anim-2 5s infinite;
-}
+    .glitch-hover:before,
+    .glitch-hover:after {
+      opacity: 0.8;
+    }
 
-.glitch::after {
-  left: -2px;
-  text-shadow: -2px 0 red;
-  background: black;
-  animation: glitch-anim-3 7s infinite;
-}
+    .glitch:before {
+      animation: glitch-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+      color: #00ffff;
+      z-index: -1;
+    }
 
-@keyframes glitch-anim {
-  0% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-5px, 5px);
-  }
-  40% {
-    transform: translate(5px, -5px);
-  }
-  60% {
-    transform: translate(-5px, 5px);
-  }
-  80% {
-    transform: translate(5px, -5px);
-  }
-  100% {
-    transform: translate(0);
-  }
-}
+    .glitch:after {
+      animation: glitch-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+      color: #ff00ff;
+      z-index: -2;
+    }
 
-@keyframes glitch-anim-2 {
-  0%,
-  100% {
-    clip: rect(84px, 9999px, 110px, 0);
-  }
-  20%,
-  40%,
-  60%,
-  80% {
-    clip: rect(54px, 9999px, 120px, 0);
-  }
-  30%,
-  50%,
-  70% {
-    clip: rect(94px, 9999px, 150px, 0);
-  }
-}
+    @keyframes glitch-color {
+      0% {
+        transform: translate(0);
+      }
+      10% {
+        transform: translate(-2px, 2px);
+      }
+      20% {
+        transform: translate(-2px, -2px);
+      }
+      30% {
+        transform: translate(2px, -2px);
+      }
+      40% {
+        transform: translate(-2px, 2px);
+      }
+      50% {
+        transform: translate(2px, 2px);
+      }
+      60% {
+        transform: translate(-2px, 2px);
+      }
+      70% {
+        transform: translate(2px, -2px);
+      }
+      80% {
+        transform: translate(-2px, -2px);
+      }
+      90% {
+        transform: translate(2px, 2px);
+      }
+      to {
+        transform: translate(0);
+      }
+    }
 
-@keyframes glitch-anim-3 {
-  0%,
-  100% {
-    clip: rect(64px, 9999px, 94px, 0);
-  }
-  20%,
-  40%,
-  60%,
-  80% {
-    clip: rect(64px, 9999px, 94px, 0);
-  }
-  30%,
-  50%,
-  70% {
-    clip: rect(64px, 9999px, 94px, 0);
-  }
-}
-</style>
+    /* Media Queries */
+    @media screen and (min-width: 481px) {
+      .container {
+        max-width: 80%;
+		margin-top: 2.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 5%;
+        padding-right: 5%;
+        box-sizing: border-box;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<h1 align="left" id="glitch-distort">Recette secrète de tarte au chocolat</h1>
-<p>Ingrédients:</p>
-<ul>
-<li>1 pâte brisée (épaisse)</li>
-<li>300 g de chocolat noir (de préférence Nestlé)</li>
-<li>300 mL de crème fraîche (entière, semi-épaisse)</li>
-<li>1 œufs (ou 2, en fonction de l'épaisseur de la crème)</li>
-<li>150 g de sucre en poudre</li>
-<li>7,5 g de sucre vanillé</li>
-</ul>
-<p>Instructions:</p>
-<ol>
-<li>Préchauffez le four à 180°C.</li>
-<li>Étalez la pâte brisée dans un moule à tarte et faites-la cuire seule pendant 15 minutes à 180°C.</li>
-<li>Dans une casserole à feu doux, faites fondre le chocolat noir avec la crème fraîche, en remuant constamment, jusqu'à ce que le mélange soit lisse et homogène.</li>
-<li>Retirez la casserole du feu et ajoutez les œufs, le sucre en poudre et le sucre vanillé. Mélangez bien jusqu'à ce que le sucre soit dissous.</li>
-<li>Versez la préparation au chocolat sur la pâte brisée cuite et remettez au four pendant environ 17 minutes à 180°C.</li>
-<li>Laissez refroidir la tarte au chocolat à température ambiante, puis placez-la au réfrigérateur durant plusieurs heures avant de servir.</li>
-</ol>
+  <div class="container">
+    <div class="glitch-wrapper">
+      <div class="glitch" data-glitch="Recette secrète de tarte au chocolat d'Anaëlle™">Recette secrète de tarte au chocolat d'Anaëlle™</div>
+    </div>
+    <h2>Ingrédients :</h2>
+    <ul class="recipe-ingredients">
+    <li>1 pâte brisée (épaisse)</li>
+    <li>300 g de chocolat noir (de préférence Nestlé)</li>
+    <li>300 mL de crème fraîche (entière, semi-épaisse)</li>
+    <li>1 œuf (ou 2, en fonction de l'épaisseur de la crème)</li>
+    <li>150 g de sucre en poudre</li>
+    <li>7,5 g de sucre vanillé</li>
+
+      <!-- Ajoutez d'autres ingrédients ici -->
+    </ul>
+
+    <h2>Instructions :</h2>
+    <ol class="recipe-instructions">
+    <li>Préchauffez le four à 180°C.</li>
+    <li>Étalez la pâte brisée dans un moule à tarte et faites-la cuire seule pendant 15 minutes à 180°C.</li>
+    <li>Dans une casserole à feu doux, faites fondre le chocolat noir avec la crème fraîche, en remuant constamment, jusqu'à ce que le mélange soit lisse et homogène.</li>
+    <li>Retirez la casserole du feu et ajoutez les œufs, le sucre en poudre et le sucre vanillé. Mélangez bien jusqu'à ce que le sucre soit dissous.</li>
+    <li>Versez la préparation au chocolat sur la pâte brisée cuite et remettez au four pendant environ 17 minutes à 180°C.</li>
+    <li>Laissez refroidir la tarte au chocolat à température ambiante, puis placez-la au réfrigérateur durant plusieurs heures avant de servir.</li>
+
+      <!-- Ajoutez d'autres étapes ici -->
+    </ol>
+
+    <script>
+      // Vérifier si l'appareil est un mobile
+      function isMobileDevice() {
+        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+      }
+
+      // Ajouter l'effet glitch au survol pour les PC
+      var glitchTitle = document.querySelector('.glitch');
+      glitchTitle.addEventListener('mouseenter', function () {
+        if (!isMobileDevice()) {
+          glitchTitle.classList.add('glitch-hover');
+        }
+      });
+      glitchTitle.addEventListener('mouseleave', function () {
+        if (!isMobileDevice()) {
+          setTimeout(function () {
+            glitchTitle.classList.remove('glitch-hover');
+          }, 1500); // Arrêter l'effet glitch après 1.5 seconde
+        }
+      });
+
+      if (isMobileDevice()) {
+        // Ajouter les timings de l'effet glitch sur mobile
+        setTimeout(function () {
+          glitchTitle.classList.add('glitch-hover');
+        }, 3000); // Démarrer l'effet glitch après 3 secondes sur mobile
+
+        setTimeout(function () {
+          glitchTitle.classList.remove('glitch-hover');
+        }, 3250); // Supprimer l'effet glitch après 3.25 secondes
+
+        setTimeout(function () {
+          glitchTitle.classList.add('glitch-hover');
+        }, 5000); // Démarrer l'effet glitch après 5 secondes sur mobile à nouveau
+
+        setTimeout(function () {
+          glitchTitle.classList.remove('glitch-hover');
+        }, 5500); // Supprimer l'effet glitch après 5.5 secondes
+      }
+
+        setTimeout(function () {
+          glitchTitle.classList.add('glitch-hover');
+        }, 7000); // Démarrer l'effet glitch après 7 secondes sur mobile à nouveau
+
+        setTimeout(function () {
+          glitchTitle.classList.remove('glitch-hover');
+        }, 8000); // Supprimer l'effet glitch après 8 secondes
+
+        setTimeout(function () {
+          glitchTitle.classList.add('glitch-hover');
+        }, 10000); // Démarrer l'effet glitch après 10 secondes sur mobile à nouveau
+
+
+    </script>
+  </div>
 </body>
+
 </html>
