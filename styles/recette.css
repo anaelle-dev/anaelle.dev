@@ -1,0 +1,42 @@
+/* Styles CSS généraux */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f8f8;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour le titre de la recette */
+.recipe-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #00ffff;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Media Queries */
+@media screen and (min-width: 481px) {
+  .container {
+    max-width: 80%;
+    margin-top: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+  }
+}
