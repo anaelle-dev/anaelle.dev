@@ -63,10 +63,10 @@
   60% {
     transform: translate(-2px, 2px);
   }
- 70% {
+  70% {
     transform: translate(2px, -2px);
   }
-  % {
+  80% {
     transform: translate(-2px, -2px);
   }
   90% {
