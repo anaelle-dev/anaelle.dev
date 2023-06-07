@@ -1,6 +1,6 @@
 # [anaelle.dev](https://www.anaelle.dev/)
 
-### To-do list:
+## To-do list (focusing on recette.html for now):
 
 Bug Fixes and Improvements:
 
