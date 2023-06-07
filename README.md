@@ -1,6 +1,6 @@
-# [Anaëlle.dev](https://www.anaelle.dev/)
+# [anaelle.dev](https://www.anaelle.dev/)
 
-## To-do list (focusing on recette.html for now):
+## To-do list (focusing on [recette.html](https://www.anaelle.dev/recette.html) for now):
 
 ### Bug Fixes:
 
