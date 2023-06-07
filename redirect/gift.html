@@ -5,8 +5,9 @@
   <title>Redirection</title>
   <meta name="robots" content="noindex, nofollow">
   <script>
-    const queryString = window.location.pathname.split("/").pop();
-    const destination = `https://store.steampowered.com/account/registerkey?key=${queryString}`;
+    const urlParams = new URLSearchParams(window.location.search);
+    const key = urlParams.get('key') || window.location.pathname.split('/').pop();
+    const destination = `https://store.steampowered.com/account/registerkey?key=${key}`;
     window.location.replace(destination);
   </script>
 </head>
