@@ -5,9 +5,13 @@
   <title>Redirection</title>
   <meta name="robots" content="noindex, nofollow">
   <script>
-    const key = window.location.pathname.split('/').pop();
-    const destination = `https://store.steampowered.com/account/registerkey?key=${key}`;
-    window.location.replace(destination);
+    const keyRegex = /\/([^/]+)$/;
+    const match = keyRegex.exec(window.location.pathname);
+    if (match) {
+      const key = match[1];
+      const destination = `https://store.steampowered.com/account/registerkey?key=${key}`;
+      window.location.replace(destination);
+    }
   </script>
 </head>
 <body>
