@@ -1,4 +1,4 @@
-# [anaelle.dev](https://www.anaelle.dev/)
+# [ANAELLE.DEV](https://www.anaelle.dev/)
 
 ## To-do list (focusing on recette.html for now):
 
