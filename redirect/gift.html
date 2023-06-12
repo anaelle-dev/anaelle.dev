@@ -1,1 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirection</title>
+  <script>
+    // Récupère l'argument de l'URL
+    var urlParameter = new URLSearchParams(window.location.search).get("key");
 
+    // Supprime le premier caractère de l'argument
+    // var modifiedParameter = urlParameter.substring(1);
+
+    // Redirige vers le site avec l'argument modifié comme paramètre
+    var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(urlParameter);
+    window.location.href = redirectUrl;
+  </script>
+</head>
+<body>
+  <h1>Redirection</h1>
+</body>
+</html>
