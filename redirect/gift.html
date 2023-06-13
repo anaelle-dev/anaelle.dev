@@ -18,7 +18,7 @@
       document.body.innerHTML = "<h1>Redirection…</h1>";
 
       // Effectue la redirection immédiatement
-      window.location.href = redirectUrl;
+      window.location.replace(redirectUrl);
 
       // Vérifie si la redirection ne s'est pas effectuée après 3 secondes
       setTimeout(function() {
