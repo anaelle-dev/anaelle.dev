@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Redirection…</title>
+  <title>Redirection</title>
   <script>
     // Récupère l'argument de l'URL
     var urlParameter = new URLSearchParams(window.location.search).get("key");
@@ -13,18 +13,13 @@
 
       // Redirige vers le site avec l'argument modifié comme paramètre
       var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(modifiedParameter);
+      window.location.href = redirectUrl;
 
-      // Affiche le message "Redirection…" immédiatement
-      document.body.innerHTML = "<h1>Redirection…</h1>";
-
-      // Effectue la redirection immédiatement
-      window.location.replace(redirectUrl);
-
-      // Vérifie si la redirection ne s'est pas effectuée après 3 secondes
+      // Vérifie si la redirection ne s'est pas effectuée après une courte attente
       setTimeout(function() {
         // Affiche le message d'erreur si la redirection n'a pas eu lieu
-        if (window.location.href !== redirectUrl) {
-          document.body.innerHTML = "<h1>Si vous voyez ce texte, c'est qu'il y a eu un problème avec la redirection</h1><h1>Merci d'envoyer un mail à <a href='mailto:contact@anaelle.dev'>contact@anaelle.dev</a> qui tentera de régler le problème dans les meilleurs délais lol</h1>";
+        if (window.location.href.indexOf(redirectUrl) !== 0) {
+          document.body.innerHTML = "<h1>Si vous voyez ce texte, c'est qu'il y a eu un problème avec la redirection</h1><h1>Si cette page s'affiche pendant plusieurs secondes, merci d'envoyer un mail à <a href='mailto:contact@anaelle.dev'>contact@anaelle.dev</a></h1>";
         }
       }, 3000); // Attend 3 secondes avant de vérifier la redirection
     } else {
