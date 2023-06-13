@@ -1,7 +1,13 @@
-<!DOCTYPE html>
+
+Clé Redirection Site Problème
+
+
+User
+Explique moi ce que fait ce code comme si j'avais 6 ans :
+"<!DOCTYPE html>
 <html>
 <head>
-  <title>Redirection</title>
+  <title>Redirection…</title>
   <script>
     // Récupère l'argument de l'URL
     var urlParameter = new URLSearchParams(window.location.search).get("key");
@@ -14,13 +20,13 @@
       // Redirige vers le site avec l'argument modifié comme paramètre
       var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(modifiedParameter);
 
-      // Affiche le message "Redirection..." pendant la redirection
+      // Affiche le message "Redirection…" immédiatement
       document.body.innerHTML = "<h1>Redirection…</h1>";
 
       // Effectue la redirection immédiatement
       window.location.href = redirectUrl;
 
-      // Vérifie si la redirection ne s'est pas effectuée après une courte attente
+      // Vérifie si la redirection ne s'est pas effectuée après 3 secondes
       setTimeout(function() {
         // Affiche le message d'erreur si la redirection n'a pas eu lieu
         if (window.location.href.indexOf(redirectUrl) !== 0) {
