@@ -13,11 +13,10 @@
 
       // Redirige vers le site avec l'argument modifié comme paramètre
       var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(modifiedParameter);
-      document.body.innerHTML = "<h1>Redirection...</h1>"; // Ajoute le message de redirection
-setTimeout(function() {
-  window.location.href = redirectUrl; // Effectue la redirection après l'attente de 3 secondes
-}, 3000);
 
+      // Effectue la redirection immédiatement
+      window.location.href = redirectUrl;
+      
       // Vérifie si la redirection ne s'est pas effectuée après une courte attente
       setTimeout(function() {
         // Affiche le message d'erreur si la redirection n'a pas eu lieu
