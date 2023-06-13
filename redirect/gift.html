@@ -23,7 +23,7 @@
       // Vérifie si la redirection ne s'est pas effectuée après 3 secondes
       setTimeout(function() {
         // Affiche le message d'erreur si la redirection n'a pas eu lieu
-        if (window.location.href.indexOf(redirectUrl) !== 0) {
+        if (window.location.href !== redirectUrl) {
           document.body.innerHTML = "<h1>Si vous voyez ce texte, c'est qu'il y a eu un problème avec la redirection</h1><h1>Merci d'envoyer un mail à <a href='mailto:contact@anaelle.dev'>contact@anaelle.dev</a> qui tentera de régler le problème dans les meilleurs délais lol</h1>";
         }
       }, 3000); // Attend 3 secondes avant de vérifier la redirection
