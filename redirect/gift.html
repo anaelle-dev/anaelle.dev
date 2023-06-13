@@ -6,15 +6,31 @@
     // Récupère l'argument de l'URL
     var urlParameter = new URLSearchParams(window.location.search).get("key");
 
-    // Supprime le premier caractère de l'argument
-    var modifiedParameter = urlParameter.substring(1);
+    // Vérifie si le paramètre "key" est présent
+    if (urlParameter) {
+      // Supprime le premier caractère de l'argument
+      var modifiedParameter = urlParameter.substring(1);
 
-    // Redirige vers le site avec l'argument modifié comme paramètre
-    var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(modifiedParameter);
-    window.location.href = redirectUrl;
+      // Redirige vers le site avec l'argument modifié comme paramètre
+      var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(modifiedParameter);
+      document.body.innerHTML = "<h1>Redirection...</h1>"; // Ajoute le message de redirection
+setTimeout(function() {
+  window.location.href = redirectUrl; // Effectue la redirection après l'attente de 3 secondes
+}, 3000);
+
+      // Vérifie si la redirection ne s'est pas effectuée après une courte attente
+      setTimeout(function() {
+        // Affiche le message d'erreur si la redirection n'a pas eu lieu
+        if (window.location.href.indexOf(redirectUrl) !== 0) {
+          document.body.innerHTML = "<h1>Si vous voyez ce texte, c'est qu'il y a eu un problème avec la redirection</h1><h1>Merci d'envoyer un mail à <a href='mailto:contact@anaelle.dev'>contact@anaelle.dev</a> qui tentera de régler le problème dans les meilleurs délais lol</h1>";
+        }
+      }, 3000); // Attend 3 secondes avant de vérifier la redirection
+    } else {
+      // Affiche le message d'erreur si le paramètre "key" n'est pas présent
+      document.body.innerHTML = "<h1>Erreur : paramètre 'key' non présent, la redirection ne peut pas être effectuée</h1>";
+    }
   </script>
 </head>
 <body>
-  <h1>Redirection</h1>
 </body>
 </html>
