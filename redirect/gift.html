@@ -4,6 +4,7 @@
   <title>Redirection…</title>
   <script>
     var redirectionSuccessful = false;
+    var invalidKey = false;
 
     function redirectToSteam() {
       // Récupère l'argument de l'URL
@@ -12,6 +13,7 @@
       // Vérifie si le paramètre key n'existe pas ou ne fait qu'un caractère
       if (!urlParameter || urlParameter.length <= 1) {
         document.getElementById("error").innerText = "Erreur : Paramètre key invalide.";
+        invalidKey = true;
         return;
       }
 
@@ -25,8 +27,8 @@
     }
 
     function showError() {
-      if (!redirectionSuccessful) {
-        document.getElementById("error").innerHTML = 'Erreur : La redirection a échoué. Si le problème persiste, veuillez contacter <a href="mailto:contact@anaelle.dev">contact@anaelle.dev</a> qui fera de son mieux pour régler le problème dans les plus brefs délais lol';
+      if (!redirectionSuccessful && !invalidKey) {
+        document.getElementById("error").innerHTML = 'Erreur : La redirection a échoué. Si le problème persiste, veuillez contacter <a href="mailto:contact@anaelle.dev">contact@anaelle.dev</a qui fera de son mieux pour régler le problème dans les plus brefs délais lol';
       }
     }
   </script>
