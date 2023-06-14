@@ -27,14 +27,12 @@
     }
 
     function showError() {
-      if (!redirectionSuccessful && !invalidKey) {
-        document.getElementById("error").innerHTML = 'Erreur : La redirection a échoué. Si le problème persiste, veuillez contacter <a href="mailto:contact@anaelle.dev">contact@anaelle.dev</a qui fera de son mieux pour régler le problème dans les plus brefs délais lol';
-      }
+      document.getElementById("error").innerHTML = 'Erreur : La redirection a échoué. Si le problème persiste, veuillez contacter <a href="mailto:contact@anaelle.dev">contact@anaelle.dev</a> qui fera de son mieux pour régler le problème dans les plus brefs délais lol';
     }
   </script>
 </head>
-<body onload="redirectToSteam(); setTimeout(showError, 3000);">
+<body onload="redirectToSteam(); setTimeout(function() { if (!redirectionSuccessful && !invalidKey) { showError(); } }, 3000);">
   <h1>Redirection…</h1>
   <p id="error"></p>
 </body>
-</html>
+</>
