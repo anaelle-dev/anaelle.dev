@@ -4,37 +4,30 @@
   <title>Redirection…</title>
   <script>
     function redirectToSteam() {
-      // Récupère l'argument de l'URL
       var urlParameter = new URLSearchParams(window.location.search).get("key");
 
-      // Vérifie si le paramètre key n'existe pas ou ne fait qu'un caractère
       if (!urlParameter || urlParameter.length <= 1) {
-        if (document.getElementById("error").innerText === "") {
-        document.getElementById("error").innerText = "Erreur : Paramètre key invalide.";
-        }
+        showError("Paramètre key invalide.");
         return;
       }
 
-      // Supprime le premier caractère de l'argument
       var modifiedParameter = urlParameter.substring(1);
-
-      // Redirige vers le site avec l'argument modifié comme paramètre
       var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(modifiedParameter);
       window.location.href = redirectUrl;
     }
 
-    function showError() {
-      document.getElementById("error").innerHTML = 'Erreur : La redirection a échoué. Si le problème persiste, veuillez contacter <a href="mailto:contact@anaelle.dev">contact@anaelle.dev</a> qui fera de son mieux pour régler le problème dans les plus brefs délais lol';
+    function showError(errorMessage) {
+      document.getElementById("error").innerText = "Erreur : " + errorMessage;
     }
-  </script>
-setTimeout(function() {
-  var urlParameter = new URLSearchParams(window.location.search).get("key");
-  var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(urlParameter);
 
-  if (window.location.href.indexOf(redirectUrl) !== 0 && urlParameter && urlParameter.length > 1) {
-    showError();
-  }
-}, 3000);
+    setTimeout(function() {
+      var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(new URLSearchParams(window.location.search).get("key"));
+
+      if (window.location.href.indexOf(redirectUrl) !== 0) {
+        showError("Erreur : La redirection a échoué. Si le problème persiste, veuillez contacter <a href=mailto:contact@anaelle.dev>contact@anaelle.dev</a> qui fera de son mieux pour régler le problème dans les plus brefs délais lol");
+      }
+    }, 3000);
+  </script>
 </head>
 <body onload="redirectToSteam();">
   <h1>Redirection…</h1>
