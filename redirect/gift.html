@@ -7,7 +7,7 @@
       var urlParameter = new URLSearchParams(window.location.search).get("key");
 
       if (!urlParameter || urlParameter.length <= 1) {
-        showError("Paramètre key invalide.");
+        showError("Paramètre key invalide");
         return;
       }
 
@@ -20,11 +20,18 @@
       document.getElementById("error").innerHTML = "Erreur : " + errorMessage;
     }
 
+    // This is the new code
+    var timeout;
+    
     setTimeout(function() {
       var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(new URLSearchParams(window.location.search).get("key"));
 
       if (!window.location.href.startsWith(redirectUrl)) {
-        showError("La redirection a échoué. Si le problème persiste, veuillez contacter <a href='mailto:contact@anaelle.dev'>contact@anaelle.dev</a> qui fera de son mieux pour régler le problème dans les plus brefs délais lol");
+        if (document.getElementById("error").innerHTML.includes("Paramètre key invalide.")) {
+          // No need to show the timeout error message
+        } else {
+          showError("La redirection a échoué. Si le problème persiste, veuillez contacter <a href='mailto:contact@anaelle.dev'>contact@anaelle.dev</a> qui fera de son mieux pour régler le problème dans les plus brefs délais lol");
+        }
       }
     }, 3000);
   </script>
