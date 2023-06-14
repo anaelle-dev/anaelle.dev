@@ -3,17 +3,15 @@
 <head>
   <title>Redirection…</title>
   <script>
-    var redirectionSuccessful = false;
-    var invalidKey = false;
-
     function redirectToSteam() {
       // Récupère l'argument de l'URL
       var urlParameter = new URLSearchParams(window.location.search).get("key");
 
       // Vérifie si le paramètre key n'existe pas ou ne fait qu'un caractère
       if (!urlParameter || urlParameter.length <= 1) {
+        if (document.getElementById("error").innerText === "") {
         document.getElementById("error").innerText = "Erreur : Paramètre key invalide.";
-        invalidKey = true;
+        }
         return;
       }
 
@@ -23,7 +21,6 @@
       // Redirige vers le site avec l'argument modifié comme paramètre
       var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(modifiedParameter);
       window.location.href = redirectUrl;
-      redirectionSuccessful = true;
     }
 
     function showError() {
@@ -31,8 +28,8 @@
     }
   </script>
 </head>
-<body onload="redirectToSteam(); setTimeout(function() { if (!redirectionSuccessful && !invalidKey) { showError(); } }, 3000);">
+<body onload="redirectToSteam(); setTimeout(showError, 3000);">
   <h1>Redirection…</h1>
   <p id="error"></p>
 </body>
-</>
+</html>
