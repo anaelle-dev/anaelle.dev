@@ -27,8 +27,16 @@
       document.getElementById("error").innerHTML = 'Erreur : La redirection a échoué. Si le problème persiste, veuillez contacter <a href="mailto:contact@anaelle.dev">contact@anaelle.dev</a> qui fera de son mieux pour régler le problème dans les plus brefs délais lol';
     }
   </script>
+setTimeout(function() {
+  var urlParameter = new URLSearchParams(window.location.search).get("key");
+  var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(urlParameter);
+
+  if (window.location.href.indexOf(redirectUrl) !== 0 && urlParameter && urlParameter.length > 1) {
+    showError();
+  }
+}, 3000);
 </head>
-<body onload="redirectToSteam(); setTimeout(showError, 3000);">
+<body onload="redirectToSteam();">
   <h1>Redirection…</h1>
   <p id="error"></p>
 </body>
