@@ -7,7 +7,7 @@
       var urlParameter = new URLSearchParams(window.location.search).get("key");
 
       if (!urlParameter || urlParameter.length <= 1) {
-        showError("Paramètre key invalide");
+        showError("Paramètre key invalide.");
         return;
       }
 
@@ -18,11 +18,10 @@
 
     function showError(errorMessage) {
       document.getElementById("error").innerHTML = "Erreur : " + errorMessage;
+      var timeout = null;
     }
 
     // This is the new code
-    var timeout;
-    
     setTimeout(function() {
       var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(new URLSearchParams(window.location.search).get("key"));
 
