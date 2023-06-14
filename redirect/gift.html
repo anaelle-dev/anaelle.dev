@@ -24,7 +24,7 @@
       var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(new URLSearchParams(window.location.search).get("key"));
 
       if (window.location.href.indexOf(redirectUrl) !== 0) {
-        showError("Erreur : La redirection a échoué. Si le problème persiste, veuillez contacter <a href=mailto:contact@anaelle.dev>contact@anaelle.dev</a> qui fera de son mieux pour régler le problème dans les plus brefs délais lol");
+        showError("La redirection a échoué. Si le problème persiste, veuillez contacter contact@anaelle.dev.");
       }
     }, 3000);
   </script>
