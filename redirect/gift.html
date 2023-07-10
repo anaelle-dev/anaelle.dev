@@ -3,14 +3,13 @@
 <head>
   <title>Redirection…</title>
   <script>
-    const redirectUrl = "https://store.steampowered.com/account/registerkey?key=" +
-      encodeURIComponent(new URLSearchParams(window.location.search).get("key").slice(1));
+    const redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(new URLSearchParams(window.location.search).get("key"));
 
     function showError(errorMessage) {
-      document.querySelector("#error").textContent = "Erreur : " + errorMessage;
+      document.getElementById("error").innerHTML = "Erreur : " + errorMessage;
     }
 
-    window.setTimeout(() => {
+    setTimeout(() => {
       if (window.location.href !== redirectUrl) {
         showError("La redirection a échoué. Si le problème persiste, veuillez contacter <a href='mailto:contact@anaelle.dev'>contact@anaelle.dev</a> qui fera de son mieux pour régler le problème dans les plus brefs délais lol");
       }
@@ -24,7 +23,7 @@
     window.location.href = redirectUrl;
   </script>
 </head>
-<body>
+<body onload="redirectToSteam();">
   <h1>Redirection…</h1>
   <p id="error"></p>
 </body>
