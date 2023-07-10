@@ -28,6 +28,6 @@ Cette fonction affiche un message d'erreur passé en paramètre dans l'élément
 ### Vérification de la redirection
 
 - Lorsque la page est chargée, la fonction `redirectToSteam()` est appelée. Si le paramètre `key` est invalide, un message d'erreur est affiché immédiatement en utilisant la fonction `showError()`. Si le paramètre `key` est valide, la redirection s'effectue vers la page d'activation de clé Steam correspondante.
-- Cependant, au bout de 3 secondes (fonction `setTimeout()`), le code vérifie si la redirection a réussi en comparant l'URL actuelle avec la nouvelle URL de redirection. Si la redirection a échoué, un message d'erreur est affiché.
+- Cependant, au bout de 5 secondes (fonction `setTimeout()`), le code vérifie si la redirection a réussi en comparant l'URL actuelle avec la nouvelle URL de redirection. Si la redirection a échoué, un message d'erreur est affiché.
 
 Veuillez noter que le message d'erreur contient un lien de contact vers [`contact@anaelle.dev`](mailto:contact@anaelle.dev) pour signaler un problème éventuel.
