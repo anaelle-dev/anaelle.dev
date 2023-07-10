@@ -3,7 +3,8 @@
 <head>
   <title>Redirection…</title>
   <script>
-    const redirectUrl = "https://store.steampowered.com/account/registerkey?key=" + encodeURIComponent(new URLSearchParams(window.location.search).get("key").slice(1));
+    const redirectUrl = "https://store.steampowered.com/account/registerkey?key=" +
+      encodeURIComponent(new URLSearchParams(window.location.search).get("key").slice(1));
 
     function showError(errorMessage) {
       document.querySelector("#error").textContent = "Erreur : " + errorMessage;
