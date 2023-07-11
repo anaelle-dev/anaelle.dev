@@ -3,23 +3,30 @@
 <head>
   <title>Redirection…</title>
   <script>
-    function redirectToSteam() {
-      if (!urlParameter || urlParameter.length <= 1) {
+    function redirectToSteam(key) {
+      if (!key || key.length <= 1) {
         showError("Paramètre key invalide.");
         return;
       }
+
       var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" +
-        encodeURIComponent(urlParameter.slice(1));
+        encodeURIComponent(key.slice(1));
       window.location.href = redirectUrl;
     }
+
     function showError(errorMessage) {
       document.getElementById("error").innerHTML = "Erreur : " + errorMessage;
     }
-    setTimeout(function() {
-      if (!window.location.href === redirectUrl) {
+
+    function checkRedirect() {
+      if (window.location.href !== redirectUrl) {
         showError("La redirection a échoué. Si le problème persiste, veuillez contacter <a href='mailto:contact@anaelle.dev'>contact@anaelle.dev</a> qui fera de son mieux pour régler le problème dans les plus brefs délais lol");
       }
-    }, 5000);
+    }
+
+    setTimeout(checkRedirect, 5000);
+
+    redirectToSteam(new URLSearchParams(window.location.search).get("key"));
   </script>
 </head>
 <body onload="redirectToSteam();">
