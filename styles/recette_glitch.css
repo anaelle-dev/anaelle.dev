@@ -31,13 +31,13 @@
 
 .glitch:before {
   animation: glitch-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-  color: #00ffff;
+  color: #5bcefa;
   z-index: -1;
 }
 
 .glitch:after {
   animation: glitch-color 0.8s cubic-bezier(0.25, 0.46, 0.45,0.94) reverse both infinite;
-  color: #ff00ff;
+  color: #f5a9b8;
   z-index: -2;
 }
 
