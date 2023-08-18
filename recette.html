@@ -2,27 +2,31 @@
 <html lang="fr">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F1PTRT94YJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-F1PTRT94YJ');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1PTRT94YJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F1PTRT94YJ');
+  </script>
   <meta charset="UTF-8">
   <meta name="title" content="Trans rights!">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recette secrète de tarte au chocolat d'Anaëlle</title>
+  <script>
+    document.title = "Recette secrète de tarte au chocolat d'Anaëlle";
+  </script>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Poppins:600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/recette.css">
   <link rel="stylesheet" href="styles/recette_glitch.css">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
   <div class="container">
     <div class="glitch-wrapper">
-      <div class="glitch" data-glitch="Recette secrète de tarte au chocolat d'Anaëlle™">Recette secrète de tarte au chocolat d'Anaëlle™</div>
+      <div class="glitch" data-glitch="Recette secrète de tarte au chocolat d'Anaëlle™"><div style="text-align: center;">Recette secrète de tarte au chocolat d'Anaëlle™</div></div>
     </div>
-    <h2>Ingrédients :</h2>
+    <h2 style="margin-top: 100px;">Ingrédients :</h2>
     <ul class="recipe-ingredients">
       <li>1 pâte brisée (épaisse)</li>
       <li>300 g de chocolat noir (de préférence Nestlé)</li>
@@ -42,7 +46,20 @@
       <li>Laissez refroidir la tarte au chocolat à température ambiante, puis placez-la au réfrigérateur durant plusieurs heures avant de servir.</li>
       <!-- Ajoutez d'autres étapes ici -->
     </ol>
-    <script src="scripts/recette.js"></script>
   </div>
+  <div class="dark-mode-wrapper">
+    <div class="dark-mode-toggle">
+      <input type="checkbox" id="dark-mode-toggle">
+      <label for="dark-mode-toggle">Toggle Dark Mode</label>
+    </div>
+  </div>
+  <script src="scripts/recette.js"></script>
+  <script>
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    darkModeToggle.addEventListener('change', () => {
+      body.classList.toggle('dark-mode');
+    });
+  </script>
 </body>
 </html>

@@ -2,18 +2,26 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f8f8f8;
+  transition: background-color 0.5s ease;
+}
+
+body.dark-mode {
+  background-color: #000;
+  color: #fff;
 }
 
 .container {
-  max-width: 100%;
+  max-width: 80%;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Styles pour le titre de la recette */
 .recipe-title {
   font-size: 36px;
   margin-bottom: 20px;
@@ -28,15 +36,41 @@ body {
   overflow-wrap: break-word;
 }
 
-/* Media Queries */
-@media screen and (min-width: 481px) {
-  .container {
-    max-width: 80%;
-    margin-top: 2.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 5%;
-    padding-right: 5%;
-    box-sizing: border-box;
-  }
+.ingredients {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #000;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.instructions {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #000;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Styles for dark mode */
+body.dark-mode .container {
+  background-color: #111;
+  color: #fff;
+}
+
+body.dark-mode .recipe-title {
+  color: #fff;
+}
+
+body.dark-mode .ingredients, body.dark-mode .instructions {
+  color: #fff;
+}
+
+.dark-mode-wrapper {
+  margin-top: 50px;
+  text-align: center;
 }
