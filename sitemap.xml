@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.anaelle.dev/</loc>
+    <loc>https://www.anaelle.dev</loc>
+  </url>
+  <url>
+    <loc>https://anaelle.dev</loc>
   </url>
   <url>
     <loc>https://www.anaelle.dev/favicon.ico</loc>
@@ -15,14 +18,20 @@
   <url>
     <loc>https://www.anaelle.dev/recette.html</loc>
   </url>
-  <url>
-    <loc>https://www.anaelle.dev/images/trans_emoji_u1f498.svg</loc>
+    <url>
+    <loc>https://www.anaelle.dev/assets/trans_emoji_u1f498.html</loc>
   </url>
   <url>
-    <loc>https://www.anaelle.dev/images/lesbian_emoji_u1f498.svg</loc>
+    <loc>https://www.anaelle.dev/assets/trans_emoji_u1f498.svg</loc>
+  </url>
+    <url>
+    <loc>https://www.anaelle.dev/assets/lesbian_emoji_u1f498.html</loc>
   </url>
   <url>
-    <loc>https://www.anaelle.dev/images/logo.png</loc>
+    <loc>https://www.anaelle.dev/assets/lesbian_emoji_u1f498.svg</loc>
+  </url>
+  <url>
+    <loc>https://www.anaelle.dev/assets/logo.png</loc>
   </url>
   <url>
     <loc>https://www.anaelle.dev/redirect/gift.html</loc>
@@ -38,5 +47,8 @@
   </url>
   <url>
     <loc>https://www.anaelle.dev/styles/recette_glitch.css</loc>
+  </url>
+  <url>
+    <loc>https://www.anaelle.dev/hosts.txt</loc>
   </url>
 </urlset>
