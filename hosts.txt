@@ -1,4 +1,4 @@
-# Title: Ryūko's host blocklist
+# Title: Anaëlle's hosts blocklist
 
 0.0.0.0 02.mouseflow.com
 0.0.0.0 ad.doubleclick.net
