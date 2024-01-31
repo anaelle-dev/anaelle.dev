@@ -41,6 +41,7 @@
 0.0.0.0 analyticsengine.s3.amazonaws.com
 0.0.0.0 api-adservices.apple.com
 0.0.0.0 api.ad.xiaomi.com
+0.0.0.0 api.bugsnag.com
 0.0.0.0 api.luckyorange.com
 0.0.0.0 api.mouseflow.com
 0.0.0.0 apl.bugsnag.com
@@ -114,6 +115,7 @@
 0.0.0.0 pixel.facebook.com
 0.0.0.0 realtime.luckyorange.com
 0.0.0.0 samsung-com.112.207.net
+0.0.0.0 samsung-com.112.2o7.net
 0.0.0.0 samsungads.com
 0.0.0.0 script.hotjar.com
 0.0.0.0 sdkconfig.ad.intl.xiaomi.com
