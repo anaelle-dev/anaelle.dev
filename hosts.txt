@@ -1,4 +1,4 @@
-# Title: Anaëlle's hosts blocklist
+# Title: Anaëlle's blockedex
 
 0.0.0.0 02.mouseflow.com
 0.0.0.0 ad.doubleclick.net
