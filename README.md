@@ -1,4 +1,4 @@
-# <div align="center"><a href="https://anaelle.dev"><img src="https://github.com/anaelle-dev/anaelle.dev/assets/63869398/4c5d571c-d84d-446d-b1f2-76881c6164bb" alt="social preview"></a>
+# <div align="center"><a href="https://anaelle.dev"><img src="https://github.com/anaelle-dev/anaelle.dev/assets/63869398/e94f9a49-5dc1-4c38-be72-f43e4641555f" alt="social preview"></a>
 
 ## To-do list (focusing on [recette.html](https://www.anaelle.dev/recette.html) for now):
 
