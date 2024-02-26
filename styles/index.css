@@ -1,0 +1,26 @@
+/* styles.css */
+
+body {
+  margin: 0;
+    padding: 0;
+      overflow: hidden;
+      }
+
+      #entete {
+        /* Add any styles for #entete here */
+        }
+
+        .center-container {
+          display: flex;
+            justify-content: center;
+              align-items: center;
+                height: 100vh;
+                }
+
+                .center-container a {
+                  /* Add any styles for the anchor tag inside .center-container here */
+                  }
+
+                  .center-container img {
+                    max-width: 100%;
+                    }
