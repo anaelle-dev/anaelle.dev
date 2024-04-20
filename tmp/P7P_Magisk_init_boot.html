@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="https://unpkg.com/marked"></script> <script>
+<script src="https://unpkg.com/marked"></script>
+<script>
 const url = "https://raw.githubusercontent.com/anaelle-dev/P7P_Magisk_init_boot/main/README.md";
 
 fetch(url)
   .then(response => response.text())  // Parse the response as text
   .then(data => {
     const htmlContent = marked(data);  // Convert Markdown to HTML with marked.js
+    console.log(htmlContent);  // Log the converted HTML to console
     document.getElementById("content-container").innerHTML = htmlContent;
   })
   .catch(error => console.error("Error:", error)); // Log errors to console
@@ -16,6 +18,6 @@ fetch(url)
 <meta name="title" content="Google Pixel 7 Pro Magisk patched init_boot.img files" />
 <title>Google Pixel 7 Pro Magisk patched init_boot.img files</title>
 <link rel="stylesheet" type="text/css" href="../styles/index.css" />  </head>
-<body bgcolor="#181a1b">
+<body>
   <div id="content-container"></div> </body>
 </html>
