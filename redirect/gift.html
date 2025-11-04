@@ -3,34 +3,24 @@
 <head>
   <title>Redirection…</title>
   <script>
-    function redirectToSteam(key) {
-      if (!key || key.length <= 1) {
-        showError("Paramètre key invalide.");
+    window.addEventListener("DOMContentLoaded", () => {
+      const rawKey = new URLSearchParams(window.location.search).get("key");
+      const baseUrl = "https://store.steampowered.com/account/registerkey";
+
+      // Si le paramètre est absent ou vaut simplement "/", redirige vers la page Steam sans paramètre
+      if (!rawKey || rawKey === "/") {
+        window.location.href = baseUrl;
         return;
       }
 
-      var redirectUrl = "https://store.steampowered.com/account/registerkey?key=" +
-        encodeURIComponent(key.slice(1));
-      window.location.href = redirectUrl;
-    }
-
-    function showError(errorMessage) {
-      document.getElementById("error").innerHTML = "Erreur : " + errorMessage;
-    }
-
-    function checkRedirect() {
-      if (window.location.href !== redirectUrl) {
-        showError("La redirection a échoué. Si le problème persiste, veuillez contacter <a href='mailto:contact@anaelle.dev'>contact@anaelle.dev</a> qui fera de son mieux pour régler le problème dans les plus brefs délais lol");
-      }
-    }
-
-    setTimeout(checkRedirect, 5000);
-
-    redirectToSteam(new URLSearchParams(window.location.search).get("key"));
+      // Sinon, retire le "/" initial et ajoute la clé à l'URL
+      const cleanKey = rawKey.startsWith("/") ? rawKey.slice(1) : rawKey;
+      window.location.href = `${baseUrl}?key=${encodeURIComponent(cleanKey)}`;
+    });
   </script>
 </head>
-<body onload="redirectToSteam();">
+<body>
   <h1>Redirection…</h1>
-  <p id="error"></p>
+  <p>Veuillez patienter pendant la redirection vers Steam…</p>
 </body>
 </html>
