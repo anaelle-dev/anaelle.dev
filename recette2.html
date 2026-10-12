@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="title" content="Trans rights!">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truc au beurre de cacahuète mais j'ai pas trouvé de nom dsl</title>
+  <script>
+    document.title = "Truc au beurre de cacahuète mais j'ai pas trouvé de nom dsl";
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Poppins:600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/recette.css">
+  <link rel="stylesheet" href="styles/recette_glitch.css">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="glitch-wrapper">
+      <div class="glitch" data-glitch="Truc au beurre de cacahuète mais j'ai pas trouvé de nom dsl"><div style="text-align: center;">Recette secrète de tarte au chocolat d'Anaëlle™</div></div>
+    </div>
+    <h2 style="margin-top: 100px;">Ingrédients :</h2>
+    <h2 style="margin-top: 100px;">Base :</h2>
+    <ul class="recipe-ingredients">
+      <li>100g de flocons d'avoine</li>
+      <li>100g de poudre d'amande</li>
+      <li>Une pincée de sel</li>
+      <li>5 cuillères à soupe de beurre de cacahuète (crémeux)</li>
+      <li>3 cuillères à soupe de miel</li>
+      <li>1 cuillère à soupe de lait</li>
+      <li>1 cuillère à café d'extrait de vanille</li>
+      <br />
+      <h2 style="margin-top: 100px;">Garniture :</h2>
+      <li>125g de chocolat noir</li>
+      <li>125g de nutella</li>
+      <li>15g de sucre</li>
+      <li>2 cuillères à café de beurre de cacahuète (crémeux)</li>
+    </ul>
+    <h2>Instructions :</h2>
+    <ol class="recipe-instructions">
+      <li>Mixez les flocons d'avoine et les amandes jusqu'à ce qu'ils soient finement moulus.</li>
+      <li>Ajoutez-les dans un grand saladier avec tous les autres ingrédients pour la base et mélangez bien.</li>
+      <li>Presser dans un moule.</li>
+      <br />
+      <li>Faire fondre le chocolat (et nutella) au micro-ondes jusqu'à ce qu'il soit lisse.</li>
+      <li>Ajouter le beurre de cacahuète et mélanger.</li>
+      <li>Verser sur la base et tapoter le moule pour faire sortir l'air.</li>
+      <li>Laisser reposer au réfrigérateur pendant au moins 2 heures.</li>
+    </ol>
+  </div>
+  <div class="dark-mode-wrapper">
+    <div class="dark-mode-toggle">
+      <input type="checkbox" id="dark-mode-toggle">
+      <label for="dark-mode-toggle">Toggle Dark Mode</label>
+    </div>
+  </div>
+  <script src="scripts/recette.js"></script>
+  <script>
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    darkModeToggle.addEventListener('change', () => {
+      body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>
